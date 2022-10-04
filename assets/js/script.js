@@ -93,3 +93,12 @@ var startQuizButton = document.querySelector("#start-quiz-button")
 startQuizButton.addEventListener("click", function () {
   alert("Starting quiz now.");
 });
+
+var timeLeft = 75;
+var quizTimerEl = document.querySelector("#quiz-timer")
+var quizTimerInterval = setInterval(function() {
+   quizTimerEl.innerHTML = `${timeLeft} seconds left`;
+   timeLeft--;
+
+}, 1000)
+
