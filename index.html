@@ -1,31 +1,38 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Coding Quiz</title>
- </head>
- <body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#view-high-scores">View High Scores</a></li>
-                <li><a id="quiz-timer" href="#time">Time: 00</a></li>
-            </ul>
-        </nav>
-     </header>
+      <nav>
+        <ul>
+          <li><a href="#view-high-scores">View High Scores</a></li>
+          <li><a id="quiz-timer" href="#time">Time: 00</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <section class="intro">
-        <h1>CODING QUIZ CHALLENGE</h1>
-        <p>Answer the following questions. ypu have 2 minutes</p>
-        <button id="start-quiz-button" class="start-button">Start Quiz
-        </button>
+    <section id="intro">
+      <h1>CODING QUIZ CHALLENGE</h1>
+      <p>Answer the following questions. ypu have 2 minutes</p>
+      <button id="start-quiz-button" class="button">Start Quiz</button>
     </section>
 
+    <section id="questions">
+      <h2>question</h2>
+      <ol id = "answer-buttons">
+        <button class="button">answer1</button>
+        <button class="button">answer2</button>
+        <button class="button">answer3</button>
+        <button class="button">answer4</button>
+      </ol>
+    </section>
 
-
-    <script src="./assets/js/script.js"></script>  
- </body>
- </html>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

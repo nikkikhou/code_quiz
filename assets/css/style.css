@@ -1,31 +1,40 @@
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-
 nav ul {
-    display: flex;
-    padding-right: 15px;
-    justify-content: space-between;
-    list-style: none;
+  display: flex;
+  padding-right: 15px;
+  justify-content: space-between;
+  list-style: none;
 }
 
 nav ul a {
-    color: rebeccapurple;
+  color: rebeccapurple;
 }
 
-.start-button {
-    border-radius: 15px;
-    background-color: rebeccapurple;
-    padding: 10px 40px;
-   margin: auto;
+.button {
+  border-radius: 15px;
+  background-color: rebeccapurple;
+  padding: 10px 40px;
+  margin: auto;
   font-size: 18px;
   line-height: 18px;
   text-align: center;
   color: white;
-
+  display: block;
 }
 
 .intro {
-    text-align: center;
+  text-align: center;
 }
+
+.hide {
+    display: none;
+}
+
+#questions {
+  text-align: center;
+}
+
