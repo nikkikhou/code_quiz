@@ -4,13 +4,26 @@ startQuizButtonEl.addEventListener("click", function () {
   startQuiz();
 })
 
+// answer button listener
+var answerButtonEl = document.querySelector("#questions ol button");
+answerButtonEl.addEventListener("click", function () {
+  nextQuestion();
+})
+
 // start quiz
 function startQuiz () {
     var introEl = document.querySelector("#intro");
     introEl.classList.add("hide")
+    var questionEl = document.querySelector("#questions");
+    questionEl.classList.remove("hide")
     showQuestion();
 }
 
+// next question
+function nextQuestion () {
+    currentQuestionIndex ++
+    showQuestion()
+}
 
 // timer
 var timeLeft = 75;
