@@ -4,12 +4,6 @@ startQuizButtonEl.addEventListener("click", function () {
   startQuiz();
 });
 
-// answer button listener
-var answerButtonEl = document.querySelector("#answer-buttons button");
-answerButtonEl.addEventListener("click", function () {
-  nextQuestion();
-});
-
 // start quiz
 function startQuiz() {
   var introEl = document.querySelector("#intro");
@@ -54,14 +48,17 @@ var showQuestion = function () {
   var questionAskedEl = document.querySelector("#questions h2");
   questionAskedEl.innerHTML = currentQuestion.question;
 
-
-  // Get the <ol> object from the DOM
-  var answers = document.querySelector("#answer-buttons").children;
-
-  // Loop through the children of the <ol>
-  for (i = 0; i < answers.length; i++) {
-    answers[i].innerHTML = currentQuestion.options[i];
-    
+  // Loop through and display the possible answers
+  var answerButtonsEl = document.querySelector("#answer-buttons");
+  answerButtonsEl.innerHTML = "";
+  for (i = 0; i < currentQuestion.options.length; i++) {
+    var answerButtonEl = document.createElement("button");
+    answerButtonEl.innerHTML = currentQuestion.options[i];
+    answerButtonEl.classList.add("button");
+    answerButtonEl.addEventListener("click", function () {
+      nextQuestion();
+    });
+    answerButtonsEl.appendChild(answerButtonEl);
   }
 };
 
