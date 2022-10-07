@@ -25,7 +25,7 @@ function nextQuestion() {
 }
 
 // timer
-var timeLeft = 10;
+var timeLeft = 75;
 var quizTimerEl = document.querySelector("#quiz-timer");
 var quizTimerInterval = setInterval(function () {
   timeLeft--;
@@ -63,7 +63,12 @@ var showQuestion = function () {
     var answerButtonEl = document.createElement("button");
     answerButtonEl.innerHTML = currentQuestion.options[i];
     answerButtonEl.classList.add("button");
-    answerButtonEl.addEventListener("click", function () {
+    answerButtonEl.addEventListener("click", function (event) {
+      if (getQuestionAnswer() === event.target.innerHTML) {
+        alert('CORRECT')
+      } else {
+        alert('WRONG')
+      }
       nextQuestion();
     });
     answerButtonsEl.appendChild(answerButtonEl);
@@ -78,6 +83,10 @@ var showQuizResults = function () {
   quizResultsEl.classList.remove("hide");
   var finalScoreEl = document.querySelector("#final-score")
   finalScoreEl.innerHTML = timeLeft
+}
+
+var getQuestionAnswer = function() {
+  return myQuestions[currentQuestionIndex].answer
 }
 
 
@@ -107,7 +116,7 @@ var myQuestions = [
     question:
       "3. String values must be enclosed within ______ when being assigned to variables.",
     options: ["commas", "curly brackets", "quotes", "Parenthesis"],
-    answer: "curly brackets",
+    answer: "quotes",
   },
   {
     question: "4. What does CSS stand for?",
