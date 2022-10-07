@@ -15,16 +15,24 @@ function startQuiz() {
 
 // next question
 function nextQuestion() {
-  currentQuestionIndex++;
-  showQuestion();
+  if (currentQuestionIndex < myQuestions.length - 1) {
+    currentQuestionIndex++;
+    showQuestion();
+  } else {
+    stopTime()
+    showQuizResults()
+  }
 }
 
 // timer
-var timeLeft = 75;
+var timeLeft = 10;
 var quizTimerEl = document.querySelector("#quiz-timer");
 var quizTimerInterval = setInterval(function () {
   timeLeft--;
-  if (timeLeft === 0) stopTime();
+  if (timeLeft === 0) {
+    stopTime();
+    showQuizResults ()
+  } 
   quizTimerEl.innerHTML = `Time: ${timeLeft}`;
 }, 1000);
 
@@ -61,6 +69,17 @@ var showQuestion = function () {
     answerButtonsEl.appendChild(answerButtonEl);
   }
 };
+
+// show quiz results
+var showQuizResults = function () {
+  var questionEl = document.querySelector("#questions");
+  questionEl.classList.add("hide");
+  var quizResultsEl = document.querySelector("#quiz-results");
+  quizResultsEl.classList.remove("hide");
+  var finalScoreEl = document.querySelector("#final-score")
+  finalScoreEl.innerHTML = timeLeft
+}
+
 
 // questions
 var myQuestions = [
